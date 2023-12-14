@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+
+    <!--    Bottom tabs-->
+    <string name="tab_home">Home</string>
+    <string name="tab_game">Games</string>
+    <string name="tab_new_and_hot">New &amp; Hot</string>
+    <string name="tab_my_profile">My Profile</string>
+    <string name="dashboard">Dashboard</string>
+
+
+<!--    Home Tab-->
+    <string name="section_name_popular">Popular Movies</string>
+    <string name="section_name_top_rate">Top Rated</string>
+    <string name="view_all">view all</string>
+
+
+</resources>
