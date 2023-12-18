@@ -21,6 +21,7 @@ import das.jhaman.movieapp.data.MoviesApi
 import das.jhaman.movieapp.data.repo.MoviesRepository
 import das.jhaman.movieapp.domain.DiscoverMoviesUseCase
 import das.jhaman.movieapp.domain.PopularMoviesUseCase
+import das.jhaman.movieapp.domain.TopRatedMoviesUseCase
 import org.koin.core.module.dsl.factoryOf
 import das.jhaman.movieapp.ui.home.HomeViewModel
 
@@ -78,6 +79,7 @@ private val viewModelModule = module {
 private val useCaseModule = module {
     singleOf(::DiscoverMoviesUseCase)
     singleOf(::PopularMoviesUseCase)
+    singleOf(::TopRatedMoviesUseCase)
 }
 
 private val repositoryModule = module {

@@ -14,8 +14,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import cafe.adriel.voyager.koin.getScreenModel
-import cafe.adriel.voyager.navigator.LocalNavigator
-import cafe.adriel.voyager.navigator.currentOrThrow
 import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
 import das.jhaman.movieapp.domain.models.Movies
@@ -29,7 +27,6 @@ internal object HomeTab : Tab {
 
         val onBoardingScreenViewModel = getScreenModel<HomeViewModel>()
         val uiData = onBoardingScreenViewModel.uiData.collectAsState()
-        val local = LocalNavigator.currentOrThrow
         Scaffold {
             Column(
                 modifier = Modifier
@@ -37,8 +34,9 @@ internal object HomeTab : Tab {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 DashboardContentLoaded(
-                    popularMovies = uiData.value.popularMovies,
                     discoverMovies = uiData.value.discoverMovies,
+                    popularMovies = uiData.value.popularMovies,
+                    topRatedMovies = uiData.value.topRatedMovies,
                     onItemClick = { movie -> },
                     viewAllClick = {} // TODO: need to add click
                 )
@@ -48,8 +46,9 @@ internal object HomeTab : Tab {
 
     @Composable
     fun DashboardContentLoaded(
-        popularMovies: List<Movies>,
         discoverMovies: List<Movies>,
+        popularMovies: List<Movies>,
+        topRatedMovies: List<Movies>,
         onItemClick: (Movies) -> Unit,
         viewAllClick: () -> Unit
     ) {
@@ -74,7 +73,7 @@ internal object HomeTab : Tab {
                 )
 
                 HorizontalSection(
-                    movies = discoverMovies,
+                    movies = topRatedMovies,
                     sectionHeading = stringResource(MR.strings.section_name_top_rate),
                     onItemClick = onItemClick,
                     viewAllClick = viewAllClick

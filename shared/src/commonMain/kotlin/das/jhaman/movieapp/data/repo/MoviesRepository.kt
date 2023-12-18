@@ -14,4 +14,9 @@ internal class MoviesRepository(private val moviesApi: MoviesApi) {
         moviesApi.discoverMovies().mapCatching {
             it.results.toMovies()
         }
+
+    suspend fun getTopRatedMovies(): Result<List<Movies>> =
+        moviesApi.topRatedMovies().mapCatching {
+            it.results.toMovies()
+        }
 }

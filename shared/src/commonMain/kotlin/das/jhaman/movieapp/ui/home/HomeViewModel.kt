@@ -4,6 +4,7 @@ import cafe.adriel.voyager.core.model.ScreenModel
 import cafe.adriel.voyager.core.model.screenModelScope
 import das.jhaman.movieapp.domain.DiscoverMoviesUseCase
 import das.jhaman.movieapp.domain.PopularMoviesUseCase
+import das.jhaman.movieapp.domain.TopRatedMoviesUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -11,9 +12,10 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 internal class HomeViewModel(
-    private val discoverMoviesUseCase: DiscoverMoviesUseCase,
     private val popularMoviesUseCase: PopularMoviesUseCase,
-) : ScreenModel {
+    private val discoverMoviesUseCase: DiscoverMoviesUseCase,
+    private val topRatedMoviesUseCase: TopRatedMoviesUseCase
+    ) : ScreenModel {
 
     private val _uiData = MutableStateFlow(HomeScreenUIData())
     val uiData: StateFlow<HomeScreenUIData> = _uiData.asStateFlow()
@@ -21,6 +23,7 @@ internal class HomeViewModel(
     init {
         discoverMovies()
         popularMovies()
+        fetchTopRatedMovies()
     }
 
     private fun popularMovies() {
@@ -40,6 +43,17 @@ internal class HomeViewModel(
             if (result != null) {
                 _uiData.update { prev ->
                     prev.copy(discoverMovies = result)
+                }
+            }
+        }
+    }
+
+    private fun fetchTopRatedMovies() {
+        screenModelScope.launch {
+            val result = topRatedMoviesUseCase().getOrNull()
+            if (result != null) {
+                _uiData.update { prev ->
+                    prev.copy(topRatedMovies = result)
                 }
             }
         }

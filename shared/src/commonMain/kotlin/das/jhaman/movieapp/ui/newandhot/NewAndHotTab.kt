@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
+import das.jhaman.movieapp.ui.common.DefaultText
 import das.jhaman.movieapp.ui.common.rememberVideoLibrary
 import dev.icerock.moko.resources.compose.stringResource
 import moviedb.app.MR
@@ -28,7 +29,7 @@ internal object NewAndHotTab : Tab {
                 modifier = Modifier.fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text("NewAndHot Tab")
+                DefaultText(stringResource(MR.strings.tab_new_and_hot))
             }
         }
     }
