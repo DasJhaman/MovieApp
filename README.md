@@ -22,8 +22,8 @@ The Movies App comes with several preconfigured features to accelerate your deve
 ![image](https://github.com/DasJhaman/MovieApp/assets/8167091/b140cc98-af0c-4a86-9ca7-34a9f06642cf)
 
 # Android with English Language
-![image](https://github.com/DasJhaman/MovieApp/assets/8167091/aa356fdf-36ce-49d9-954c-ea631642fc95)
-![image](https://github.com/DasJhaman/MovieApp/assets/8167091/28c333f9-2faf-4da8-8dee-77c0ea055c56)
+![image](https://github.com/DasJhaman/MovieApp/assets/8167091/24308e84-96bd-4469-8736-513ded6a4189)
+![image](https://github.com/DasJhaman/MovieApp/assets/8167091/9723cf98-9c7a-4940-978f-6ec75f303ae5)
 
 ## Run the app
 
