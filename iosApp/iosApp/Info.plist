@@ -42,6 +42,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>CFBundleLocalizations</key>
+    	<array>
+    		<string>en</string>
+    		<string>de</string>
+    	</array>
 	<key>UILaunchScreen</key>
 	<dict/>
 </dict>

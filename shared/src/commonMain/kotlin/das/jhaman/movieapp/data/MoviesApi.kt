@@ -14,4 +14,8 @@ internal class MoviesApi(private val httpClient: HttpClient) {
     suspend fun discoverMovies(): Result<MoviesDto> = runCatching {
         httpClient.get("discover/movie").body()
     }
+
+    suspend fun topRatedMovies(): Result<MoviesDto> = runCatching {
+        httpClient.get("movie/top_rated").body()
+    }
 }
