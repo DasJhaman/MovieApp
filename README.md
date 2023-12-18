@@ -31,8 +31,10 @@ The Movies App comes with several preconfigured features to accelerate your deve
 - Open this directory in Android Studio.
 - Wait for gradle to sync dependencies.
 - Please add following values to your local properties file:
+```
   API_BASE_URL=https://api.themoviedb.org/3/
   IMAGE_BASE_URL=https://image.tmdb.org/t/p/w780
   AUTH_TOKEN={$value}
+```
 - Please replace '{$value}' to your original bearer token which you ll get it by singing up https://www.themoviedb.org/
 - Build & run the app.
